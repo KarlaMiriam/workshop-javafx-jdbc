@@ -20,14 +20,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import model.Services.DepartmentService;
-import model.entities.Department;
+import model.Services.SellerService;
+import model.entities.Seller;
 import model.exceptions.ValidationException;
 
-public class DepartmentFormController implements Initializable {
+public class SellerFormController implements Initializable {
 	
-	private Department entity;
-	private DepartmentService service;
+	private Seller entity;
+	private SellerService service;
 	private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 	
 	@FXML
@@ -45,11 +45,11 @@ public class DepartmentFormController implements Initializable {
 	@FXML
 	private Button btCancel;
 	
-	public void setDepatment(Department entity) {
+	public void setDepatment(Seller entity) {
 		this.entity =  entity;
 	}
 	
-	public void setDepartmentService(DepartmentService service) {
+	public void setSellerService(SellerService service) {
 		this.service = service;
 	}
 	
@@ -92,8 +92,8 @@ public class DepartmentFormController implements Initializable {
 		
 	}
 
-	private Department getFormData() {
-		Department obj = new Department();
+	private Seller getFormData() {
+		Seller obj = new Seller();
 		
 		ValidationException exception = new ValidationException("Validation Error");
 		obj.setId(Utils.tryParseToInt(txtId.getText()));
